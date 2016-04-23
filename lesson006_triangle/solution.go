@@ -20,6 +20,10 @@ func Solution(A []int) int {
 	sort.Ints(A)
 
 	for i := 0; i < len(A)-2; i++ {
+		if A[i+2] <= 0 || A[i+1] <= 0 || A[i] <= 0 {
+			continue
+		}
+
 		if A[i]+A[i+1] > A[i+2] {
 			return 1
 		}
